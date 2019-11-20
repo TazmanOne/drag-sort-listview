@@ -16,14 +16,17 @@
 
 package com.mobeta.android.dslv;
 
+
+// taken from v4 rev. 10 ResourceCursorAdapter.java
+
+
 import android.content.Context;
 import android.database.Cursor;
-import androidx.cursoradapter.widget.CursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-// taken from v4 rev. 10 ResourceCursorAdapter.java
+import androidx.cursoradapter.widget.CursorAdapter;
 
 /**
  * Static library support version of the framework's {@link android.widget.ResourceCursorAdapter}.

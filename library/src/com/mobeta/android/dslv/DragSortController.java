@@ -1,5 +1,6 @@
 package com.mobeta.android.dslv;
 
+
 import android.graphics.Point;
 import android.view.GestureDetector;
 import android.view.HapticFeedbackConstants;
@@ -7,6 +8,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.AdapterView;
+
+import androidx.core.view.GestureDetectorCompat;
+import androidx.core.view.ViewConfigurationCompat;
 
 /**
  * Class that starts and stops item drags on a {@link DragSortListView}
@@ -19,8 +23,8 @@ import android.widget.AdapterView;
  * {@link DragSortListView#setFloatViewManager()} of your
  * {@link DragSortListView} instance.
  */
-public class DragSortController extends SimpleFloatViewManager implements View.OnTouchListener, 
-		GestureDetector.OnGestureListener {
+public class DragSortController extends SimpleFloatViewManager implements View.OnTouchListener,
+        GestureDetector.OnGestureListener {
 
     /**
      * Drag init mode enum.
@@ -47,9 +51,9 @@ public class DragSortController extends SimpleFloatViewManager implements View.O
     private boolean mRemoveEnabled = false;
     private boolean mIsRemoving = false;
 
-    private GestureDetector mDetector;
+    private GestureDetectorCompat mDetector;
 
-    private GestureDetector mFlingRemoveDetector;
+    private GestureDetectorCompat mFlingRemoveDetector;
 
     private int mTouchSlop;
 
@@ -118,10 +122,10 @@ public class DragSortController extends SimpleFloatViewManager implements View.O
 
         super(dslv);
         mDslv = dslv;
-        mDetector = new GestureDetector(dslv.getContext(), this);
-        mFlingRemoveDetector = new GestureDetector(dslv.getContext(), mFlingRemoveListener);
+        mDetector = new GestureDetectorCompat(dslv.getContext(), this);
+        mFlingRemoveDetector = new GestureDetectorCompat(dslv.getContext(), mFlingRemoveListener);
         mFlingRemoveDetector.setIsLongpressEnabled(false);
-        mTouchSlop = ViewConfiguration.get(dslv.getContext()).getScaledTouchSlop();
+        mTouchSlop = ViewConfigurationCompat.getScaledHoverSlop(ViewConfiguration.get(dslv.getContext()));
         mDragHandleId = dragHandleId;
         mClickRemoveId = clickRemoveId;
         mFlingHandleId = flingHandleId;
@@ -452,7 +456,7 @@ public class DragSortController extends SimpleFloatViewManager implements View.O
             new GestureDetector.SimpleOnGestureListener() {
                 @Override
                 public final boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-                        float velocityY) {
+                                             float velocityY) {
                     if (mRemoveEnabled && mIsRemoving) {
                         int w = mDslv.getWidth();
                         int minPos = w / 5;

@@ -1,5 +1,6 @@
 package com.mobeta.android.dslv;
 
+
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
+
 
 /**
  * Simple implementation of the FloatViewManager class. Uses list

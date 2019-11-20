@@ -21,12 +21,6 @@
 
 package com.mobeta.android.dslv;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
@@ -50,6 +44,12 @@ import android.widget.Checkable;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.WrapperListAdapter;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ListView subclass that mediates drag and drop resorting of items.
@@ -2626,8 +2626,8 @@ public class DragSortListView extends ListView {
         }
     }
 
-    private static int buildRunList(SparseBooleanArray cip, int rangeStart, int rangeEnd, 
-            int[] runStart, int[] runEnd) {
+    private static int buildRunList(SparseBooleanArray cip, int rangeStart, int rangeEnd,
+                                    int[] runStart, int[] runEnd) {
         
         int runCount = 0;
 

@@ -1,15 +1,15 @@
 package com.mobeta.android.dslv;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.database.Cursor;
-import androidx.cursoradapter.widget.CursorAdapter;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.cursoradapter.widget.CursorAdapter;
 
 
 /**

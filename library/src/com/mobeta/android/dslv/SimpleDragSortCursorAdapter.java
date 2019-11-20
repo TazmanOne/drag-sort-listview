@@ -16,16 +16,17 @@
 
 package com.mobeta.android.dslv;
 
+
+// taken from sdk/sources/android-16/android/widget/SimpleCursorAdapter.java
+
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import androidx.cursoradapter.widget.CursorAdapter;
-import androidx.cursoradapter.widget.SimpleCursorAdapter;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-// taken from sdk/sources/android-16/android/widget/SimpleCursorAdapter.java
+import androidx.cursoradapter.widget.CursorAdapter;
 
 /**
  * An easy adapter to map columns from a cursor to TextViews or ImageViews
@@ -80,8 +81,8 @@ public class SimpleDragSortCursorAdapter extends ResourceDragSortCursorAdapter {
      * use {@link android.app.LoaderManager} with a {@link android.content.CursorLoader}.
      */
     @Deprecated
-    public SimpleDragSortCursorAdapter(Context context, int layout, Cursor c, String[] from, 
-            int[] to) {
+    public SimpleDragSortCursorAdapter(Context context, int layout, Cursor c, String[] from,
+                                       int[] to) {
 
         super(context, layout, c);
         mTo = to;
